@@ -1,4 +1,4 @@
-# USGS Leaflet.js Analysis
+# USGS Analysis using Leaflet.js
 - Analysis of USGS earthquake GeoJSON data, using leaflet.js and d3.json
 
 - Map plotting three different earthquake datasets using Leaflet layer groups

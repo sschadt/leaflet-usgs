@@ -29,9 +29,9 @@ d3.json(m45plus_30days_queryUrl, function(data) {
             layer3_data = data.features;
 
             // Pass all our layers to the mapping function to plot them
-            mapLayers( layer1_data, 
-                        layer2_data,
-                        layer3_data );
+            mapLayers(layer1_data, 
+                      layer2_data,
+                      layer3_data);
         });
     });
 });
@@ -58,8 +58,8 @@ function mapLayers(layer1, layer2, layer3) {
             "<br /><b>Magnitude:</b> " + feature.properties.mag + "</p>");
     }
     /**
-     * Function that defines how GeoJSON points spawn Leaflet layers. It is internally 
-     * called when data is added, passing the GeoJSON point feature and its LatLng.
+     * Function that defines how GeoJSON points spawn Leaflet layers. Internally called 
+     *  when data is added, passing the GeoJSON point feature and its LatLng.
      * @param {*} feature 
      * @param {number[]} latlng 
      */
@@ -101,7 +101,7 @@ function mapLayers(layer1, layer2, layer3) {
         style: styleLayer
     });
 
-    // Send the events data layers to the createMap function
+    // Send the data layers to the createMap function
     createMaps(L_layer1, L_layer2, L_layer3);
 }
 
@@ -123,7 +123,6 @@ function createMaps(L_1, L_2, L_3) {
 
     // Define map overlay names & data
     var overlayMaps = {};
-    layer1_with_header = layer1_name
     overlayMaps[layer1_name] = L_1
     overlayMaps[layer2_name] = L_2
     overlayMaps[layer3_name] = L_3
@@ -146,10 +145,10 @@ function createMaps(L_1, L_2, L_3) {
         position: 'topright'
     };
 
-    // Create layer groups for filtering datasets
+    // Add filtering layer groups to our Leaflet map object
     L.control.groupedLayers(null, overlays, overlaysOptions).addTo(myMap);
 
-    // Add legend to map
+    // Add legend to map object
     createLegend(myMap);
 }
 
